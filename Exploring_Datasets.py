@@ -90,4 +90,23 @@ print(corr_players)
 #What is the average rating for attacking players (`'A'`)?
 att_players = soccer_positions == 'A'
 avg_rating = np.mean(soccer_ratings[att_players])
+
 print(avg_rating)
+
+# Who is taller on average? Baseball players or soccer players? Keep in mind that baseball heights are stored in inches!
+# Convert soccer heights from centimeters to inches
+soccer_heights_in = soccer_heights * 0.3937008
+
+# Calculate average heights
+baseball_avg_height = np.mean(baseball_heights)
+soccer_avg_height = np.mean(soccer_heights_in)
+
+# Compare and display the result
+if baseball_avg_height > soccer_avg_height:
+    result = "Baseball players are taller on average."
+elif baseball_avg_height < soccer_avg_height:
+    result = "Soccer players are taller on average."
+else:
+    result = "Baseball and soccer players are the same height on average."
+
+baseball_avg_height, soccer_avg_height, result
